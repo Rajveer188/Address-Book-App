@@ -1,5 +1,8 @@
 package com.capgemini_training.addressbookapp.dto;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class AddressDTO {
     //attribute
     //Attributes
