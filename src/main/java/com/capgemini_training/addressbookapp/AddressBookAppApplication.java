@@ -12,5 +12,4 @@ public class AddressBookAppApplication {
 		logger.info("application starting.................");
 		SpringApplication.run(AddressBookAppApplication.class, args);
 	}
-
 }

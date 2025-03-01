@@ -3,7 +3,6 @@ package com.capgemini_training.addressbookapp.service;
 import com.capgemini_training.addressbookapp.dto.AddressDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
@@ -17,12 +16,9 @@ public class AddressService {
     private static final Logger logger = LoggerFactory.getLogger(AddressService.class);
     //map to store address
     Map<Integer, AddressDTO> addressMap;
-    private AddressDTO addressDTO;
 
     //constructor
-    @Autowired
-    public AddressService(AddressDTO addressDTO){
-        this.addressDTO = addressDTO;
+    public AddressService(){
         addressMap = new HashMap<>();
     }
 
