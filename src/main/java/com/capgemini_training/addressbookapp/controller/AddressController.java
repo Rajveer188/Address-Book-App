@@ -2,6 +2,7 @@ package com.capgemini_training.addressbookapp.controller;
 
 import com.capgemini_training.addressbookapp.dto.AddressDTO;
 import com.capgemini_training.addressbookapp.service.AddressService;
+import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -40,7 +41,7 @@ public class AddressController {
     }
     //method to post address
     @PostMapping("/post")
-    public ResponseEntity<AddressDTO> postAddress(@RequestBody AddressDTO address){
+    public ResponseEntity<AddressDTO> postAddress(@Valid @RequestBody AddressDTO address){
         log.info("receive rest request to add new address");
         //service call to post new address
         AddressDTO addressDTO = addressService.postAddress(address);
@@ -49,7 +50,7 @@ public class AddressController {
     //method to put address
     @PutMapping("/put/{id}")
     public ResponseEntity<AddressDTO> putAddress(@PathVariable int id,
-                                             @RequestBody AddressDTO address){
+                                             @Valid @RequestBody AddressDTO address){
         log.info("receive rest request for update address with id {}", id);
         //service call to update address
         AddressDTO addressDTO = addressService.putAddress(id,address);
