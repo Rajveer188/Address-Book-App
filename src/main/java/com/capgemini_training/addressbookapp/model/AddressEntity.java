@@ -2,9 +2,11 @@ package com.capgemini_training.addressbookapp.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.Data;
 
 @Entity
+@Table(name = "AddressBook")
 public @Data class AddressEntity {
     //Attributes
     @Id
